@@ -29,9 +29,22 @@ class Usuarios extends CI_Controller{
 	}
 
 
-	public functio insertar()
+	public functio insertar_empleado()
 	{
-		$this->input->post();
+		$this->load->model("usuarios_model");
+		$data["usuario"]=$this->usuarios_model->insertar_empleado($this->input->post(),
+																  $this->input->post(),
+																  $this->input->post(),
+																  $this->input->post(),
+																  $this->input->post(),
+																  $this->input->post(),
+																  $this->input->post(),
+																  $this->input->post(),
+																  $this->input->post());
+
+
+
+
 	}
 
 
