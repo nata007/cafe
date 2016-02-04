@@ -228,16 +228,4 @@ class Producto_model extends CI_Model{
 						->insert("pedido_producto");
 	}
 	
-
-
-
-
-
-
-
-
-
-
-
-
 }
