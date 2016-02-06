@@ -16,7 +16,7 @@ class Usuarios_model extends CI_Model{
 	}
 
 //Metodo de consulta de usuarios por login o un empleado en especifico
-
+	
 	public function get_empleado($nombre, $password)
 	{
 		return  $this->db->select("*")
@@ -34,15 +34,15 @@ class Usuarios_model extends CI_Model{
 									  $password)
 	{
 
-		return  $this->db->set("emp_nombre",$nombre)
-						 ->set("emp_curp",$curp)
+		return  $this->db->set("em_nombre",$nombre)
+						 ->set("em_curp",$curp)
 						 ->set("calle",$calle)
 						 ->set("numero",$numero)
 						 ->set("lugar",$lugar)
 						 ->set("estado",$estado)
 						 ->set("telefono",$telefono)
-						 ->set("id_organizacion",$id_organizacion)
 						 ->set("password",$password)
+						 ->set("id_organizacion",$id_organizacion)
 						 ->insert("empleado");
 
 	}
@@ -78,6 +78,7 @@ class Usuarios_model extends CI_Model{
 						->set("cte_nombre",$nombre)
 						->set("cte_pais",$pais)
 						->set("cte_lugar",$lugar)
+						->set("cte_calle",$calle)
 						->set("cte_numero_ext",$numero)
 						->set("cte_telefono",$telefono)
 						->set("cte_email",$email)
@@ -198,9 +199,9 @@ class Usuarios_model extends CI_Model{
 	}
 
 //Metodo para insertar un productor
-	public function insertar_productor()
+	public function insertar_productor($clave_productor,$prd_nombre,$prd_rfc,$prd_calle,$prd_numero,$prd_telefono,$prd_fecha_ingreso)
 	{
-		return $this->db->set("clave_productor"$clave_productor)
+		return $this->db->set("clave_productor",$clave_productor)
 						->set("prd_nombre",$prd_nombre)
 						->set("prd_rfc",$prd_rfc)
 						->set("prd_calle",$prd_calle)

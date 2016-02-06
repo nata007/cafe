@@ -1,6 +1,6 @@
 <?php 
 
-class Producto_model extends CI_Model{
+class Productos_model extends CI_Model{
 
 
 //Metodo para traer todos los productos regitrados
@@ -32,7 +32,7 @@ class Producto_model extends CI_Model{
 				 ->set("pdcto_presentacion",$pdcto_presentacion)
 				 ->set("pdcto_gramaje",$pdcto_gramaje)
 				 ->set("pdcto_precio",$pdcto_precio)
-				 ->insertar("producto");
+				 ->insert("producto");
 
 	}
 

@@ -7,7 +7,11 @@ class Usuarios extends CI_Controller{
 	public function index()
 	{
 
-		$this->load->view("usuarios/login");
+		/*$this->load->view("base");
+		$this->load->view("ejemplo");
+		*/
+		$this->load->view('cafe_base');
+		$this->load->view("basic_form.html");
 
 	}
 
@@ -15,8 +19,7 @@ class Usuarios extends CI_Controller{
 	{
 
 		$this->load->model("usuarios_model");
-		$data["usuario"]= $this->usuarios_model->get_usuarios($this->input->post("nombre"),
-															 sha1($this->input->post("password"));
+		$data["usuario"]= $this->usuarios_model->get_usuarios($this->input->post("nombre"),sha1($this->input->post("password")));
 				
 		if ( !empty($data["usuario"])) {
 			$this->load->view("principal",$data);	
@@ -28,8 +31,7 @@ class Usuarios extends CI_Controller{
 	
 	}
 
-
-	public functio insertar_empleado()
+	public function insertar_empleado()
 	{
 		$this->load->model("usuarios_model");
 		$data["usuario"]=$this->usuarios_model->insertar_empleado($this->input->post(),
